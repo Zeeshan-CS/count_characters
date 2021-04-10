@@ -1,0 +1,8 @@
+23,rf,65
+41,ik,54
+33,gg,87611,computer,500
+90,sdfs,33
+88,Pakistan,3340
+1,Zeeshan,100
+3,Hamza,33
+3,Umer,300

@@ -10,8 +10,6 @@ int size_of_string(string x)
 }
 int main()
 {
-
-
 	string text;
 	int length;
 	
@@ -20,6 +18,5 @@ int main()
 	length = size_of_string(text);	
 	cout<<"The length of string is "<<length;
 //	cout<<"The characters are =  " <<text.length();
-	
 	
 }
