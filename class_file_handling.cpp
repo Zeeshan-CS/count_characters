@@ -1,4 +1,4 @@
-// Write a C++ Program to Maintain Book Records using File Handling
+// Write a C++ Program to Maintain Book Records using File Handling///
 // Use file handling to perform following operations:
 // 1)      Add new record
 // 2)      View all records
@@ -37,7 +37,6 @@ public:
 
         book_ID = x;
     }
-
     void setname(string y)
     {
         book_Name = y;
@@ -69,6 +68,7 @@ public:
 class Library
 {
     Book books[100];
+    Book book;
     int currentBookCount;
 
 public:
@@ -121,7 +121,7 @@ public:
 
         for (int i = 0; i < count; i++)
         {
-            Book book;
+
             size_t pos = 0;
             string token;
             string delimeter = ",";
@@ -197,26 +197,57 @@ public:
     }
     void Update_Record()
     {
-        cout << "update module" << endl;
-        cout << " 1 for update id";
-        cout << " 2 for update book name";
-        cout << " 3 for update price";
-        ofstream MyReadFile("book_Record.txt");
-        string text;
-        string array[100];
-        int i =0;
-        // file.open("book_Record.txt", std::ios::app);
+        int i;
+        ofstream newfile;
+        string filetext;
+        string uid;
+        string ubname;
+        string uprice;
 
-        while (getline(MyReadFile, text, '\n'))
+        for (i = 0; i < currentBookCount; i++)
         {
-            array[i]=text;
-
-            i++;
+            cout << books[i].get_bookid() << endl;
+            cout << books[i].get_bokname() << endl;
+            cout << books[i].get_bookprice() << endl;
         }
 
-        // file.close();
+        for (i = 0; i < currentBookCount; i++)
+        {
+
+            cout << "Enter the updated id " << endl;
+            cin >> uid;
+            books[i].setid(uid);
+            cout << "Enter the updated Name " << endl;
+            cin >> ubname;
+            books[i].setname(ubname);
+            cout << "Enter the updated Price " << endl;
+            cin >> uprice;
+            books[i].setprice(uprice);
+        }
+        for (i = 0; i < currentBookCount; i++)
+        {
+            cout << books[i].get_bookid() << endl;
+            cout << books[i].get_bokname() << endl;
+            cout << books[i].get_bookprice() << endl;
+        }
+        // cout << "Updating Records in array";
+        // for (i = 0; i < currentBookCount; i++)
+        // {
+
+        // }
+
+        newfile.open("newfile.txt", std ::ios ::out);
+        for (i = 0; i < currentBookCount; i++)
+        {
+            newfile << books[i].get_bookid() << "," << books[i].get_bokname() << "," << books[i].get_bookprice() << endl;
+        }
+        // newfile.close();
+
+        // ifstream filename;
+        // filename.open("book_Record.txt", std ::ios ::in);
     }
 };
+
 int main()
 {
     Library library;
@@ -227,7 +258,7 @@ int main()
     cout << "\n 3 for Delete Record ";
     cout << "\n 4 for Search  Record ";
     cout << "\n 5 for Update  Record ";
-    cout << "\n 6 Select your Choice ";
+    cout << "\n Select your Choice ";
     cin >> selection;
 
     if (selection == 1)

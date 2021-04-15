@@ -1,2 +1,4 @@
 11,computer,300
 15,Pakistan,10000
+123,cycle,345
+987,Genis_Book,2000

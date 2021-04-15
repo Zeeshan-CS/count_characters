@@ -1,0 +1,4 @@
+Name    Salary  Department
+Ali     12000   Sales
+Farhan  13000   HR
+Zahid   14000   IT
