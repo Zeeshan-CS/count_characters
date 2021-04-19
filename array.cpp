@@ -15,10 +15,6 @@ int main()
     {
         cout << "Enter some positive values ";
         cin >> arr[i];
-    }
-
-    for (i = 0; i < 10; i++)
-    {
         if (arr[i] > largest)
         {
             largest = arr[i];
@@ -28,6 +24,7 @@ int main()
             temp = arr[i];
         }
     }
+
     cout << "The largest among all " << largest << endl;
     cout << "The Smallest among all " << temp;
 }
